@@ -7,12 +7,35 @@
     tools:context=".Resultado">
 
     <TextView
+        android:id="@+id/tv_vel2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="16dp"
+        android:text="100 KM/H."
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toEndOf="@+id/tv_vel1"
+        app:layout_constraintTop_toBottomOf="@+id/tv_veloc1" />
+
+    <TextView
+        android:id="@+id/tv_dist2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="16dp"
+        android:text="300 KM."
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toEndOf="@+id/tv_dist1"
+        app:layout_constraintTop_toBottomOf="@+id/tv_dr1" />
+
+    <TextView
         android:id="@+id/tv_vehiculo1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="52dp"
         android:layout_marginTop="60dp"
-        android:text="Vehiculo1"
+        android:text="Vehículo 1"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView18" />
 
@@ -20,9 +43,10 @@
         android:id="@+id/tv_vehiculo2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="120dp"
-        android:layout_marginTop="52dp"
-        android:text="Vehiculo2"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="60dp"
+        android:text="Vehículo 2"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintStart_toEndOf="@+id/tv_vehiculo1"
         app:layout_constraintTop_toBottomOf="@+id/textView18" />
 
@@ -31,8 +55,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
-        android:layout_marginTop="96dp"
-        android:text="Distancia Recorrida"
+        android:layout_marginTop="60dp"
+        android:text="Distancia recorrida"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_vehiculo1" />
 
@@ -41,8 +65,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="64dp"
-        android:layout_marginTop="108dp"
-        android:text="Distancia Recorrida"
+        android:layout_marginTop="60dp"
+        android:text="Distancia recorrida"
         app:layout_constraintStart_toEndOf="@+id/tv_dr1"
         app:layout_constraintTop_toBottomOf="@+id/tv_vehiculo2" />
 
@@ -50,9 +74,9 @@
         android:id="@+id/tv_tiempo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="132dp"
-        android:layout_marginTop="76dp"
-        android:text="Tiempo De Viaje"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="68dp"
+        android:text="Tiempo de viaje hasta el encuentro"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_um" />
 
@@ -61,8 +85,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
-        android:layout_marginTop="88dp"
-        android:text="Velocidad Auto1"
+        android:layout_marginTop="60dp"
+        android:text="Velocidad"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_dr1" />
 
@@ -70,9 +94,9 @@
         android:id="@+id/tv_veloc2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="88dp"
-        android:text="Velocidad Auto2"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="60dp"
+        android:text="Velocidad"
         app:layout_constraintStart_toEndOf="@+id/tv_veloc1"
         app:layout_constraintTop_toBottomOf="@+id/tv_dr2" />
 
@@ -80,19 +104,19 @@
         android:id="@+id/tv_um"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="136dp"
-        android:layout_marginTop="116dp"
-        android:text="Unidad Metrica:"
+        android:layout_marginStart="156dp"
+        android:layout_marginTop="88dp"
+        android:text="Unidad Métrica"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_veloc1" />
 
     <Button
-        android:id="@+id/bt_volver2"
+        android:id="@+id/bt_nuevoCalc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="144dp"
-        android:layout_marginTop="56dp"
-        android:text="Volver"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="88dp"
+        android:text="REALIZAR NUEVO CÁLCULO"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_tiempo" />
 
@@ -100,10 +124,65 @@
         android:id="@+id/textView18"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
-        android:layout_marginTop="44dp"
-        android:text="Resultados"
+        android:layout_marginStart="156dp"
+        android:layout_marginTop="16dp"
+        android:text="RESULTADO"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/bt_simulaciones"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="28dp"
+        android:text="VER SIMULACIONES"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_nuevoCalc" />
+
+    <TextView
+        android:id="@+id/tv_dist1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="16dp"
+        android:text="400 KM."
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_dr1" />
+
+    <TextView
+        android:id="@+id/tv_vel1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="16dp"
+        android:text="120 KM/H."
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_veloc1" />
+
+    <TextView
+        android:id="@+id/tv_uMetrica"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="152dp"
+        android:layout_marginTop="16dp"
+        android:text="Anglosajona"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_um" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="168dp"
+        android:layout_marginTop="16dp"
+        android:text="02:30:45"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_tiempo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
