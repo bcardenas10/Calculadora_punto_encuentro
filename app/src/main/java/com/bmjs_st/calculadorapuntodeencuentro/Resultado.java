@@ -29,7 +29,7 @@ public class Resultado extends AppCompatActivity implements Serializable {
         tv_distTotal = (TextView) findViewById(R.id.tv_distTotal);
         tv_uMetrica = (TextView) findViewById(R.id.tv_uMetrica);
 
-        //Obtener datos de la simulación
+        //Obtener datos de la simulacion
         Intent i = getIntent();
         Simulacion simulacion = (Simulacion)i.getSerializableExtra("Simu");
 
