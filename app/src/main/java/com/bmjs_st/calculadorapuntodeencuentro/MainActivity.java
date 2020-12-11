@@ -113,7 +113,7 @@ public class MainActivity extends AppCompatActivity implements Serializable {
         if(minutes < 10) { minutos = String.format("0%s", minutes); }
         if(seconds < 10) { segundos = String.format("0%s", seconds); }
         String tiempoFormat = horas + ":" + minutos + ":" + segundos;
-
+            
         //Crear objeto Simulación y agregar a la lista
         Simulacion nueva_sim = new Simulacion(et_veh1.getText().toString(), velo1, distancia1, et_veh2.getText().toString(), velo2, distancia2, tiempoFormat, distancia);
         lista_sims.add(nueva_sim);

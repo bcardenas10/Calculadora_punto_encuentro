@@ -1,27 +1,29 @@
 package com.bmjs_st.calculadorapuntodeencuentro;
 
-import java.sql.Timestamp;
+import java.io.Serializable;
 
-public class Simulacion {
+import static com.bmjs_st.calculadorapuntodeencuentro.MainActivity.configUnidad;
 
-    private int id;
+public class Simulacion implements Serializable {
+
+    private static int id;
     //Vehiculo 1
     private String nombreVeh1;
-    private float veloVeh1; //Velocidad
-    private float distRVeh1; //Distancia recorrida
+    private double veloVeh1; //Velocidad
+    private double distRVeh1; //Distancia recorrida
     //Vehiculo 2
     private String nombreVeh2;
-    private float veloVeh2;
-    private float distRVeh2;
+    private double veloVeh2;
+    private double distRVeh2;
     //_______//
-    private Timestamp tiempo; //Tiempo hasta el encuentro
-    private float distancia; //Distancia inicial entre los 2 vehículos
+    private String tiempo; //Tiempo hasta el encuentro
+    private double distancia; //Distancia inicial entre los 2 vehículos
 
     public Simulacion() {
     }
 
-    public Simulacion(int id, String nombreVeh1, float veloVeh1, float distRVeh1, String nombreVeh2, float veloVeh2, float distRVeh2, Timestamp tiempo, float distancia) {
-        this.id = id;
+    public Simulacion(String nombreVeh1, double veloVeh1, double distRVeh1, String nombreVeh2, double veloVeh2, double distRVeh2, String tiempo, double distancia) {
+        this.id = id + 1;
         this.nombreVeh1 = nombreVeh1;
         this.veloVeh1 = veloVeh1;
         this.distRVeh1 = distRVeh1;
@@ -32,12 +34,8 @@ public class Simulacion {
         this.distancia = distancia;
     }
 
-    public int getId() {
+    public static int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getNombreVeh1() {
@@ -48,19 +46,19 @@ public class Simulacion {
         this.nombreVeh1 = nombreVeh1;
     }
 
-    public float getVeloVeh1() {
+    public double getVeloVeh1() {
         return veloVeh1;
     }
 
-    public void setVeloVeh1(float veloVeh1) {
+    public void setVeloVeh1(double veloVeh1) {
         this.veloVeh1 = veloVeh1;
     }
 
-    public float getDistRVeh1() {
+    public double getDistRVeh1() {
         return distRVeh1;
     }
 
-    public void setDistRVeh1(float distRVeh1) {
+    public void setDistRVeh1(double distRVeh1) {
         this.distRVeh1 = distRVeh1;
     }
 
@@ -72,35 +70,53 @@ public class Simulacion {
         this.nombreVeh2 = nombreVeh2;
     }
 
-    public float getVeloVeh2() {
+    public double getVeloVeh2() {
         return veloVeh2;
     }
 
-    public void setVeloVeh2(float veloVeh2) {
+    public void setVeloVeh2(double veloVeh2) {
         this.veloVeh2 = veloVeh2;
     }
 
-    public float getDistRVeh2() {
+    public double getDistRVeh2() {
         return distRVeh2;
     }
 
-    public void setDistRVeh2(float distRVeh2) {
+    public void setDistRVeh2(double distRVeh2) {
         this.distRVeh2 = distRVeh2;
     }
 
-    public Timestamp getTiempo() {
+    public String getTiempo() {
         return tiempo;
     }
 
-    public void setTiempo(Timestamp tiempo) {
+    public void setTiempo(String tiempo) {
         this.tiempo = tiempo;
     }
 
-    public float getDistancia() {
+    public double getDistancia() {
         return distancia;
     }
 
-    public void setDistancia(float distancia) {
+    public void setDistancia(double distancia) {
         this.distancia = distancia;
+    }
+
+    @Override
+    public String toString() {
+        String descSimu = "";
+        if(configUnidad == false) { //Sistema Metrico
+            String SVeloVeh1 = String.format("%.1f", veloVeh1);
+            String SVeloVeh2 = String.format("%.1f", veloVeh2);
+            String SdistT = String.format("%.1f", distancia);
+            descSimu = nombreVeh1 + " (" + SVeloVeh1 + " KM/H) - " + nombreVeh2 + " (" + SVeloVeh2 + " KM/H)" + '\n' + "Distancia: " + SdistT + " KM   -   Tiempo: " + tiempo;
+        }
+        else if(configUnidad == true) { //Sistema Anglosajón
+            String SVeloVeh1 = String.format("%.1f", veloVeh1*0.6214);
+            String SVeloVeh2 = String.format("%.1f", veloVeh2*0.6214);
+            String SdistT = String.format("%.1f", distancia*0.6214);
+            descSimu = nombreVeh1 + " (" + SVeloVeh1 + " MI/H) - " + nombreVeh2 + " (" + SVeloVeh2 + " MI/H)" + '\n' + "Distancia: " + SdistT + " MI   -   Tiempo: " + tiempo;
+        }
+        return descSimu;
     }
 }
